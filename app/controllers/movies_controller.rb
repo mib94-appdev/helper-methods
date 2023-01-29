@@ -21,8 +21,8 @@ end
 
   def create
     @the_movie = Movie.new
-    @the_movie.title = params.fetch(:title)
-    @the_movie.description = params.fetch(:description)
+    @the_movie.title = params.fetch(:movie).fetch(:title)
+    @the_movie.description = params.fetch(:movie).fetch(:description)
 
     if @the_movie.valid?
       @the_movie.save
